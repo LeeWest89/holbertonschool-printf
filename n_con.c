@@ -25,5 +25,5 @@ int n_con(va_list args, const char *format, print_a fs[])
 		}
 	}
 
-	return (b);
+	return (5);
 }

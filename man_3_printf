@@ -1,0 +1,32 @@
+.TH _PRINTF 1 _printf \-0.1
+
+.SH NAME
+_printf - format and print data
+
+.SH SYNOPSIS
+.B _printf
+.RB [\%c-
+.IR char]
+.RB [\%i-
+.IR int]
+.RB [\%d-
+.IR int]
+.RB [\%s-
+.IR string]
+.RB [\%%-
+.IR percent]
+
+.SH DESCRIPTION
+.B _printf
+a scaled down version of printf that accepts argument char, int, string, and percent.
+
+.SH OPTIONS
+.TP
+.B \-%c
+ARGUMENT to print a character.
+.TP
+.B \-%i, %d
+ARGUMENT to print a integer
+.TP
+.B \-%s
+ARGUMENT to print a integer

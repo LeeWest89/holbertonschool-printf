@@ -11,8 +11,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%K\n");
-	len2 = printf("%K\n");
+	len = _printf("%c", 'S');
+	len2 = printf("%c", 'S');
 
 	printf("Length of _printf: %d\n", len);
 	printf("Length of printf: %d\n", len2);

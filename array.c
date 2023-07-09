@@ -51,8 +51,8 @@ int print_char(va_list arg)
 	char c;
 
 	c = va_arg(arg, int);
-	_putchar(c);
-	return (1);
+	putchar(c);
+	return (0);
 }
 
 int print_int(va_list arg)

@@ -8,48 +8,37 @@
  * @format: an argument that is to be printed
  * @...: Number of arguments to print
  *
- * Return: returns 0 on success
+ * Return: returns characters that where counted
  */
 
 int _printf(const char *format, ...)
 {
 	va_list args;
 
-	int g = 0;
-
-	print_a fs[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"d", print_int},
-		{"s", print_string},
-		{"%", print_percent}
-	};
+	int c = 0;
 
 	va_start(args, format);
 
 	while (*format)
 	{
 		/**
-		 * checks if there is a % and what the character after in is.
-		 * passes the args, format, and fs to the n_con fuction and adds to g.
 		 */
 		if (*format == '%' && *(format + 1))
 		{
 			format++;
-			g += n_con(args, format, fs);
+			c += process_format(args, &format);
 		}
 		/**
-		 * if statement is false it continues the format string and adds to g
 		 */
 		else
 		{
 			_putchar(*format);
-			g++;
+			c++;
 		}
 
 		format++;
 	}
 
 	va_end(args);
-	return (g);
+	return (c);
 }

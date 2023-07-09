@@ -28,9 +28,8 @@ int process_format(va_list args, const char **format)
 	g = n_con(args, *format, fs);
 	if (g == 0)
 	{
-		_putchar('%');
 		_putchar(**format);
-		g = 2;
+		g = 1;
 	}
 
 	(*format)++;

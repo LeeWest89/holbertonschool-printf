@@ -75,7 +75,7 @@ void print_string(va_list arg)
 
 	s = va_arg(arg, char *);
 	if (s == NULL)
-		s = NULL;
+		s = "(nil)";
 
 	for (a = 0; s[a] != '\0'; a++)
 		_putchar(s[a]);

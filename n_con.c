@@ -16,13 +16,12 @@ int n_con(va_list args, const char *format, print_a fs[])
 {
 	int a, b = 0;
 
-	for (a = 0; a < 7; a++)
+	for (a = 0; a < 5; a++)
 	{
 		if (*format == *(fs[a].symbol))
 		{
 			fs[a].print(args);
 			b++;
-			break;
 		}
 	}
 

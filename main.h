@@ -18,11 +18,9 @@ typedef struct print_a
 int _putchar(char c);
 int _printf(const char *format, ...);
 int n_con(va_list args, const char *format, print_a fs[]);
-int process_format(va_list args, const char **format);
 void print_char(va_list arg);
 void print_int(va_list arg);
 void print_string(va_list arg);
 void print_percent(va_list arg);
-void print_unsigned_int(va_list arg);
 
 #endif

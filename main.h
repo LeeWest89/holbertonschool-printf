@@ -2,6 +2,11 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <unistd.h>
 
 /**
  * struct print_a - new type to define a printer
@@ -12,15 +17,16 @@
 typedef struct print_a
 {
 	char *symbol;
-	void (*print)(va_list arg);
+	int (*print)(va_list arg);
 } print_a;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int n_con(va_list args, const char *format, print_a fs[]);
-void print_char(va_list arg);
-void print_int(va_list arg);
-void print_string(va_list arg);
-void print_percent(va_list arg);
+int (*sign(const char *format))(va_list);
+int print_char(va_list arg);
+int print_int(va_list arg);
+int print_string(va_list arg);
+int print_percent(va_list arg);
+int print_num(int num);
 
 #endif

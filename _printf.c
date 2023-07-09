@@ -8,51 +8,53 @@
  * @format: an argument that is to be printed
  * @...: Number of arguments to print
  *
- * Return: returns 0 on success
+ * Return: printed characters
  */
 
 int _printf(const char *format, ...)
 {
+	int (*print)(va_list);
+	int a = 0, b = 0, c = 0;
 	va_list args;
-	int g = 0;
-
-	print_a fs[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"d", print_int},
-		{"s", print_string},
-		{"%", print_percent}
-	};
 
 	va_start(args, format);
 
-	while (*format)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return(-1);
+
+	while (format && format[a])
 	{
-		if (*format == '%' && *(format + 1))
+		if (format[a] != '%')
 		{
-			format++;
-			if (*format == '%')
-			{
-				_putchar('%');
-				g++;
-			}
-			else
-				g += n_con(args, format, fs);
+			b = _putchar(format[a]);
+			c = c + b;
+			a++;
+			continue;
 		}
 
-		else if (*format == '\n')
+		if (format[a] == '%')
+			print = sign(&format[a + 1]);
+
+		if (print)
 		{
-			 _putchar('\n');
-			 g++;
-		}
-		else
-		{
-			_putchar(*format);
-			g++;
+			b = print(args);
+			c = c + b;
+			a = a + 2;
+			continue;
 		}
 
-		format++;
+		if (format[a + 1] == '\0')
+			break;
+
+		if (format[a + 1] != '\0')
+		{
+			b = _putchar(format[a]);
+			c = c + b;
+			continue;
+		}
 	}
 	va_end(args);
-	return (g);
+	return (c);
 }
+
+	

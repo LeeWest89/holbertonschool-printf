@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 
 /**
@@ -38,6 +40,5 @@ int n_con(va_list args, const char *format, print_a fs[])
 		_putchar(*format);
 		b += 2;
 	}
-
 	return (b);
 }

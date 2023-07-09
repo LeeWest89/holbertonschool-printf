@@ -74,11 +74,13 @@ void print_string(va_list arg)
 	int a;
 
 	s = va_arg(arg, char *);
+	
 	if (s == NULL)
-		s = "(nil)";
+		s = "(null)";
 
-	for (a = 0; s[a] != '\0'; a++)
+	for(a = 0; s[a] != '\0'; a++)
 		_putchar(s[a]);
+
 }
 
 /**

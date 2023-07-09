@@ -10,9 +10,13 @@
 int main(void)
 {
 	int len, len2;
-	len = _printf("%K\n");
-	len2 = printf("%K\n");
-	fflush(stdout);
+
+	len = _printf("Help %s\n", "me");
+	len2 = printf("Help %s\n", "me");
+
+	printf("Length of _printf: %d\n", len);
+	printf("Length of printf: %d\n", len2);
+
 	if (len != len2)
 	{
 		printf("Lengths differ.\n");

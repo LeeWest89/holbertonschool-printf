@@ -14,7 +14,6 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-
 	int g = 0;
 
 	print_a fs[] = {
@@ -29,18 +28,24 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		/**
-		 * checks if there is a % and what the character after in is.
-		 * passes the args, format, and fs to the n_con fuction and adds to g.
-		 */
+		printf("Processing character: %c (ASCII: %d)\n", *format, (int)*format);
 		if (*format == '%' && *(format + 1))
 		{
 			format++;
-			g += n_con(args, format, fs);
+			if (*format == '%')
+			{
+				_putchar('%');
+				g++;
+			}
+			else
+				g += n_con(args, format, fs);
 		}
-		/**
-		 * if statement is false it continues the format string and adds to g
-		 */
+
+		else if (*format == '\n')
+		{
+			 _putchar('\n');
+			 g++;
+		}
 		else
 		{
 			_putchar(*format);

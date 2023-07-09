@@ -31,7 +31,18 @@ int _printf(const char *format, ...)
 			a++;
 			continue;
 		}
-
+		if (format[a] == '%' && format[a + 1] != '\0')
+		{
+			b = _putchar('%');
+			c = c + b;
+			if (format[a + 1] != '%')
+			{
+				_putchar(format[a + 1]);
+				c = c + b;
+				a += 2;
+				continue;
+			}
+		}
 		if (format[a] == '%')
 			print = sign(&format[a + 1]);
 
@@ -42,19 +53,16 @@ int _printf(const char *format, ...)
 			a = a + 2;
 			continue;
 		}
-
 		if (format[a + 1] == '\0')
 			break;
 
 		if (format[a + 1] != '\0')
 		{
 			b = _putchar(format[a]);
-			c = c + b;
+			c = c +b;
 			continue;
 		}
 	}
 	va_end(args);
 	return (c);
-}
-
-	
+}	

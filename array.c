@@ -12,6 +12,7 @@ int print_char(va_list arg);
 int print_int(va_list arg);
 int print_string(va_list arg);
 int print_percent(va_list arg);
+int print_next(va_list arg);
 
 int (*sign(const char *format))(va_list)
 {
@@ -38,10 +39,11 @@ int (*sign(const char *format))(va_list)
 int print_next(va_list arg)
 {
 	char a;
+
 	a = va_arg(arg, int);
 	_putchar('%');
 	_putchar(a);
-	return(2);
+	return (2);
 }
 
 int print_char(va_list arg)
@@ -87,10 +89,9 @@ int print_string(va_list arg)
 	if (s == NULL)
 		s = "(null)";
 
-	while (*s != '\0')
+	while (s[a] != '\0')
 	{
-		_putchar(*s);
-		s++;
+		_putchar(s[a]);
 		a++;
 	}
 	return (a);

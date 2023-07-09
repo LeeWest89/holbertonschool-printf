@@ -22,7 +22,21 @@ int n_con(va_list args, const char *format, print_a fs[])
 		{
 			fs[a].print(args);
 			b++;
+			return (b);
 		}
+	}
+
+	if (*format == '%')
+	{
+		_putchar('%');
+		b++;
+	}
+
+	else
+	{
+		_putchar('%');
+		_putchar(*format);
+		b += 2;
 	}
 
 	return (b);

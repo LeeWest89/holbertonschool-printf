@@ -28,7 +28,6 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		printf("Processing character: %c (ASCII: %d)\n", *format, (int)*format);
 		if (*format == '%' && *(format + 1))
 		{
 			format++;

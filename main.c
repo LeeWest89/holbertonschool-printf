@@ -13,6 +13,10 @@ int main(void)
 
 	len = _printf("%c", 'S');
 	len2 = printf("%c", 'S');
+	len = _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+	len2 = printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+	len = _printf("%K\n");
+	len2 = printf("%K\n");
 
 	printf("Length of _printf: %d\n", len);
 	printf("Length of printf: %d\n", len2);

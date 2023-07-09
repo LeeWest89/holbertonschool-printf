@@ -33,24 +33,24 @@ int _printf(const char *format, ...)
 		}
 
 		if (format[a] == '%')
+			print = sign(&format[a + 1]);
+		if (print)
 		{
-			if (format[a + 1] != '\0')
-			{
-				print = sign(&format[a + 1]);
-				if (print)
-				{
-					b = print(args);
-					c = c + b;
-					a = a + 2;
-					continue;
-				}
-			}
-		
-			b = _putchar(format[a]);
+			b = print(args);
 			c = c + b;
+			a = a + 2;
 			continue;
 		}
-		a++;
+		if (format[a + 1] == '\0')
+			break;
+		if (format[a + 1] != '\0')
+		{
+			b = _putchar(format[a]);
+			c = c + b;
+			a = a + 2;
+			continue;
+		}
+
 	}
 	va_end(args);
 	return (c);

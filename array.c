@@ -32,7 +32,16 @@ int (*sign(const char *format))(va_list)
 				return(fs[a].print);
 	}
 
-	return(NULL);
+	return (print_next);
+}
+
+int print_next(va_list arg)
+{
+	char a;
+	a = va_arg(arg, int);
+	_putchar('%');
+	_putchar(a);
+	return(2);
 }
 
 int print_char(va_list arg)

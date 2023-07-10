@@ -38,18 +38,19 @@ int (*sign(const char *format))(va_list)
 
 int print_next(va_list arg)
 {
-	int a;
 	char c;
+	int a;
 
 	a = va_arg(arg, int);
 
-	if(a >= 0 && a <= 9)
-		c = '0' + a;
+	if (a >= 0 && a <= 9)
+		c = (char)(a + '0');
 	else
 		c = (char)a;
-	_putchar('%');
+	_putchar(37);
 	_putchar(c);
 	return (2);
+	
 }
 
 int print_char(va_list arg)

@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return(-1);
+		return (-1);
 
 	while (format && format[a])
 	{
@@ -45,13 +45,12 @@ int _printf(const char *format, ...)
 				}
 
 			}
-
-		b = _putchar(format[a]);
-		c = c + b;
-		continue;
+			b = _putchar(format[a]);
+			c = c + b;
+			continue;
 		}
 		a++;
 	}
 	va_end(args);
 	return (c);
-}	
+}

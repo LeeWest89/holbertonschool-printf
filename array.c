@@ -30,11 +30,17 @@ int (*sign(const char *format))(va_list)
 	for (a = 0; fs[a].symbol != NULL; a++)
 	{
 		if (*(fs[a].symbol) == *format)
-				return(fs[a].print);
+				return (fs[a].print);
 	}
 
 	return (print_next);
 }
+
+/**
+ * print_next - prints the next character
+ * @arg: the arguement
+ * Return: 2 on success 
+ */
 
 int print_next(va_list arg)
 {
@@ -44,8 +50,13 @@ int print_next(va_list arg)
 	_putchar(37);
 	_putchar(a);
 	return (2);
-	
 }
+
+/**
+ * print_char - print the character
+ * @arg: the arguement
+ * Return: 1 on success
+ */
 
 int print_char(va_list arg)
 {
@@ -55,6 +66,12 @@ int print_char(va_list arg)
 	_putchar(c);
 	return (1);
 }
+
+/**
+ * print_int - print the integer
+ * @arg: the arguement
+ * Return: character count
+ */
 
 int print_int(va_list arg)
 {
@@ -80,6 +97,12 @@ int print_int(va_list arg)
 	return (a);
 }
 
+/**
+ * print_string - prints the string
+ * @arg: the argument
+ * Return: Character count
+ */
+
 int print_string(va_list arg)
 {
 	char *s;
@@ -97,6 +120,12 @@ int print_string(va_list arg)
 	}
 	return (a);
 }
+
+/**
+ * print_percent - print the % after %
+ * @arg: the arguement
+ * Return: 2 on success
+ */
 
 int print_percent(va_list arg)
 {

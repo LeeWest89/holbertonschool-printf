@@ -23,7 +23,7 @@ int (*sign(const char *format))(va_list)
 		{"i", print_int},
 		{"d", print_int},
 		{"s", print_string},
-		{"%", NULL},
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 

@@ -1,24 +1,10 @@
-function man_3_printf 
+.TH man_3_printf\-0.1 
 
 .SH NAME
-_printf - format and print data
+_printf \- format and print data
 
 .SH SYNOPSIS
-
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdarg.h>
-#include <unistd.h>
-int _putchar(char c);
-int _printf(const char *format, ...);
-int (*sign(const char *format))(va_list);
-int print_char(va_list arg);
-int print_int(va_list arg);
-int print_string(va_list arg);
-int print_percent(va_list arg);
-int print_next(va_list arg);
+int _print(const char *format, ..);
 
 .SH DESCRIPTION
 
@@ -30,14 +16,30 @@ the _printf function is the main function we use for creating the print structur
 A character that specifies the type of conversion to be applied.
 The conversion specifiers and their meanings are:
 
-%c - print a single character
-%s - print a character string
-%d - print a decimal number
-%o - print a octal number
-%i - print a integer number
-%u - prints a unsigned decimal number
-%x - print a number in hexagonal
-%% - print a percent sign
+.RE
+.B (c)
+.RS
+(print is converted to an unsigned char)
+
+.RE
+.B (s) 
+.RS
+(print a character string in it parameter positon)
+
+.RE
+.B (d)
+.RS
+ (print a decimal numbe)
+
+.RE
+.B (i)
+.RS
+ ( the int argument is converted to signel decimal and prints this integer)
+
+.RE
+.B (%)
+.RS
+(print a percent sig)n
 
 .SH Return Value
 sucessful return will return the function of the number of characters printed 

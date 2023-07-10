@@ -1,32 +1,47 @@
-.TH _PRINTF 1 _printf \-0.1
+function man_3_printf 
 
 .SH NAME
 _printf - format and print data
 
 .SH SYNOPSIS
-.B _printf
-.RB [\%c-
-.IR char]
-.RB [\%i-
-.IR int]
-.RB [\%d-
-.IR int]
-.RB [\%s-
-.IR string]
-.RB [\%%-
-.IR percent]
+
+#include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdarg.h>
+#include <unistd.h>
+int _putchar(char c);
+int _printf(const char *format, ...);
+int (*sign(const char *format))(va_list);
+int print_char(va_list arg);
+int print_int(va_list arg);
+int print_string(va_list arg);
+int print_percent(va_list arg);
+int print_next(va_list arg);
 
 .SH DESCRIPTION
-.B _printf
-a scaled down version of printf that accepts argument char, int, string, and percent.
 
-.SH OPTIONS
-.TP
-.B \-%c
-ARGUMENT to print a character.
-.TP
-.B \-%i, %d
-ARGUMENT to print a integer
-.TP
-.B \-%s
-ARGUMENT to print a integer
+The _putchar function print character and string output.
+the _printf function is the main function we use for creating the print structure with different formats.
+ 
+.SH Conversion Specifiers
+
+A character that specifies the type of conversion to be applied.
+The conversion specifiers and their meanings are:
+
+%c - print a single character
+%s - print a character string
+%d - print a decimal number
+%o - print a octal number
+%i - print a integer number
+%u - prints a unsigned decimal number
+%x - print a number in hexagonal
+%% - print a percent sign
+
+.SH Return Value
+sucessful return will return the function of the number of characters printed 
+
+.SH Authors
+Lee West @leewest89
+George Rogers @Grogers26

@@ -12,7 +12,7 @@ int print_char(va_list arg);
 int print_int(va_list arg);
 int print_string(va_list arg);
 int print_percent(va_list arg);
-int print_space(char c)
+int print_space(char c);
 
 int (*sign(const char *format))(va_list)
 {
@@ -39,7 +39,7 @@ int (*sign(const char *format))(va_list)
 
 			else
 			{
-				_putchar('%');
+				_putchar(37);
 				b++;
 				a = 10;
 			}
@@ -51,7 +51,7 @@ int (*sign(const char *format))(va_list)
 
 	if (a != 10)
 	{
-		_putchar('%');
+		_putchari(37);
 		_putchar(format);
 		b = b + 2;
 	}

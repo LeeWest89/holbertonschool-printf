@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stddef.h>
-#include <string.h>
-#include <stdio.h>
 /**
  * sign - prints an arguement
  * @format: string the arguement is printed from

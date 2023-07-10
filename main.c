@@ -11,15 +11,12 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%c", 'S');
-	len2 = printf("%c", 'S');
-	len = _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
-	len2 = printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
-	len = _printf("%K\n");
-	len2 = printf("%K\n");
+	len = _printf("A char inside a sentence: %c. Did it work?\n", 'F');
+	len2 = printf("A char inside a sentence: %c. Did it work?\n", 'F');
 
 	printf("Length of _printf: %d\n", len);
 	printf("Length of printf: %d\n", len2);
+	fflush(stdout);
 
 	if (len != len2)
 	{

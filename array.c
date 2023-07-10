@@ -38,11 +38,17 @@ int (*sign(const char *format))(va_list)
 
 int print_next(va_list arg)
 {
-	char a;
+	int a;
+	char c;
 
 	a = va_arg(arg, int);
+
+	if(a >= 0 && a <= 9)
+		c = '0' + a;
+	else
+		c = (char)a;
 	_putchar('%');
-	_putchar(a);
+	_putchar(c);
 	return (2);
 }
 
@@ -51,8 +57,8 @@ int print_char(va_list arg)
 	char c;
 
 	c = va_arg(arg, int);
-	putchar(c);
-	return (0);
+	_putchar(c);
+	return (1);
 }
 
 int print_int(va_list arg)

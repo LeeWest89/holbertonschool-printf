@@ -29,11 +29,11 @@ int (*sign(const char *format))(va_list)
 
 	while (a < 5)
 	{
-		if (format == *fs[a].print(arg));
+		if (format == *fs[a].print);
 		{
 			if (a != 4)
 			{
-				b = b + fs[a].print(arg);
+				b = b + fs[a].print;
 				a = 10;
 			}
 
@@ -51,7 +51,7 @@ int (*sign(const char *format))(va_list)
 
 	if (a != 10)
 	{
-		_putchari(37);
+		_putchar(37);
 		_putchar(format);
 		b = b + 2;
 	}

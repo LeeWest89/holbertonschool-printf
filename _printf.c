@@ -28,6 +28,8 @@ int _printf(const char *format, ...)
 		{
 			b = _putchar(format[a]);
 			c = c + b;
+			a++;
+			continue;
 		}
 		if (format[a] == '%')
 		{
@@ -39,20 +41,16 @@ int _printf(const char *format, ...)
 					b = print(args);
 					c = c + b;
 					a = a + 2;
-				}
-				else
-				{
-					_putchar(format[a]);
-					_putchar(format[a + 1]);
-					c = c + 2;
+					continue;
 				}
 
 			}
 
 		b = _putchar(format[a]);
 		c = c + b;
-		a++;
+		continue;
 		}
+		a++;
 	}
 	va_end(args);
 	return (c);

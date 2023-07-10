@@ -4,7 +4,7 @@
 /**
  * sign - prints an arguement
  * @format: string the arguement is printed from
- *
+ * @arg: the arguement.
  * Return: NULL.
  */
 
@@ -30,7 +30,7 @@ int (*sign(const char *format))(va_list)
 	for (a = 0; fs[a].symbol != NULL; a++)
 	{
 		if (*(fs[a].symbol) == *format)
-				return (fs[a].print);
+			return (fs[a].print);
 	}
 
 	return (print_next);
@@ -39,7 +39,7 @@ int (*sign(const char *format))(va_list)
 /**
  * print_next - prints the next character
  * @arg: the arguement
- * Return: 2 on success 
+ * Return: 2 on success
  */
 
 int print_next(va_list arg)

@@ -38,17 +38,11 @@ int (*sign(const char *format))(va_list)
 
 int print_next(va_list arg)
 {
-	char c;
-	int a;
+	char a;
 
 	a = va_arg(arg, int);
-
-	if (a >= 0 && a <= 9)
-		c = (char)(a + '0');
-	else
-		c = (char)a;
 	_putchar(37);
-	_putchar(c);
+	_putchar(a);
 	return (2);
 	
 }
@@ -102,11 +96,4 @@ int print_string(va_list arg)
 		a++;
 	}
 	return (a);
-}
-
-int print_percent(va_list arg)
-{
-	(void)arg;
-	_putchar('%');
-	return (1);
 }

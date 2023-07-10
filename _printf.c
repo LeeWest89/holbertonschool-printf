@@ -28,36 +28,31 @@ int _printf(const char *format, ...)
 		{
 			b = _putchar(format[a]);
 			c = c + b;
-			a++;
-			continue;
 		}
-
-		if (format[a] == '%' && format[a + 1] != '\0')
+		if (format[a] == '%')
 		{
-			char f = format[a + 1];
-
-			if (f != 'c' && f != 's' && f != '%' && f != 'd' && f != 'i')
+			if (format[a + 1] != '\0')
 			{
-				b = _putchar('%');
-				c += b;
-				a += 1;
-				continue;
-			}
-		}
+				print = sign(&format[a + 1]);
+				if (print)
+				{
+					b = print(args);
+					c = c + b;
+					a = a + 2;
+				}
+				else
+				{
+					_putchar(format[a]);
+					_putchar(format[a + 1]);
+					c = c + 2;
+				}
 
-		else
-		{
-
-			print = sign(&format[a + 1]);
-			if (print)
-			{
-				b = print(args);
-				c += b;
-				a += 2;
-				continue;
 			}
-		}
+
+		b = _putchar(format[a]);
+		c = c + b;
 		a++;
+		}
 	}
 	va_end(args);
 	return (c);

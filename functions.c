@@ -47,6 +47,15 @@ int print_int(va_list arg)
 	{
 		_putchar('-');
 		num = -num;
+		count += 1;
+	}
+
+	if (num == INT_MIN)
+	{
+		num %= 2000000000;
+		_putchar('2');
+		num = -num;
+		count += 1;
 	}
 
 	while (num / divisor > 9)

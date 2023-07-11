@@ -1,21 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
 
-
-/**
- * print_next - prints the next character
- * @arg: the arguement
- * Return: 2 on success
- */
-
-int print_next(va_list arg)
-{
-	(void)arg;
-
-	_putchar('%');
-	return (1);
-}
-
 /**
  * print_char - print the character
  * @arg: the arguement

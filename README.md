@@ -1,4 +1,4 @@
-project Printf 
+Project Printf 
 
 _printf - format and print data
 
@@ -19,11 +19,11 @@ int print_string(va_list arg);
 int print_percent(va_list arg);
 int print_next(va_list arg);
 
-description 
+description:
 the putchar function prints character and string out put.
 the _printf function is the main function we use for creating the print structure with different formats.
 
-conversion specifiers
+conversion specifiers:
 (A character that specifiers the type of conversion to be applied.)
 
 %c - print a single character
@@ -36,5 +36,5 @@ conversion specifiers
 %% - print a percent sign 
 
 Authors 
-Lee West @leewest89
+Lee West @leewest89 /n
 George Rogers @grogers26

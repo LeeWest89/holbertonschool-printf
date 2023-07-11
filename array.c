@@ -4,7 +4,6 @@
 /**
  * sign - prints an arguement
  * @format: string the arguement is printed from
- * @arg: the arguement.
  * Return: NULL.
  */
 

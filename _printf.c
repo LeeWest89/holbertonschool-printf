@@ -1,13 +1,9 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 
 /**
  * _printf - works like printf in a limited way
  * @format: an argument that is to be printed
  * @...: Number of arguments to print
- *
  * Return: printed characters
  */
 
@@ -18,10 +14,8 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-
 	while (format && format[a])
 	{
 		if (format[a] != '%')
@@ -51,8 +45,6 @@ int _printf(const char *format, ...)
 					count += 2;
 					continue;
 				}
-
-
 			}
 			value = _putchar(format[a]);
 			count = count + value;

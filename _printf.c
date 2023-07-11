@@ -8,8 +8,7 @@
  */
 
 int _printf(const char *format, ...)
-{
-	int (*print)(va_list);
+{int (*print)(va_list);
 	int a = 0, value = 0, count = 0;
 	va_list args;
 
@@ -19,8 +18,7 @@ int _printf(const char *format, ...)
 	while (format && format[a])
 	{
 		if (format[a] != '%')
-		{
-			value = _putchar(format[a]);
+		{value = _putchar(format[a]);
 			count = count + value;
 			a++;
 			continue;
@@ -28,18 +26,15 @@ int _printf(const char *format, ...)
 		if (format[a] == '%')
 		{
 			if (format[a + 1] != '\0')
-			{
-				print = sign(&format[a + 1]);
+			{print = sign(&format[a + 1]);
 				if (print)
-				{
-					value = print(args);
+				{value = print(args);
 					count = count + value;
 					a = a + 2;
 					continue;
 				}
 				else
-				{
-					_putchar('%');
+				{_putchar('%');
 					_putchar(format[a + 1]);
 					a += 2;
 					count += 2;

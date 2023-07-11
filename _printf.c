@@ -14,7 +14,7 @@
 int _printf(const char *format, ...)
 {
 	int (*print)(va_list);
-	int a = 0, b = 0, c = 0;
+	int a = 0, value = 0, count = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -26,8 +26,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[a] != '%')
 		{
-			b = _putchar(format[a]);
-			c = c + b;
+			value = _putchar(format[a]);
+			count = count + value;
 			a++;
 			continue;
 		}
@@ -38,19 +38,19 @@ int _printf(const char *format, ...)
 				print = sign(&format[a + 1]);
 				if (print)
 				{
-					b = print(args);
-					c = c + b;
+					value = print(args);
+					count = count + value;
 					a = a + 2;
 					continue;
 				}
 
 			}
-			b = _putchar(format[a]);
-			c = c + b;
+			value = _putchar(format[a]);
+			count = count + value;
 			continue;
 		}
 		a++;
 	}
 	va_end(args);
-	return (c);
+	return (count);
 }

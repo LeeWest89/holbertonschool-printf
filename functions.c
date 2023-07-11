@@ -12,7 +12,7 @@ int print_next(va_list arg)
 {
 	(void)arg;
 
-	_putchar(37);
+	_putchar('%');
 	return (1);
 }
 
@@ -41,7 +41,7 @@ int print_char(va_list arg)
 int print_int(va_list arg)
 {
 	int num = va_arg(arg, int);
-	int a = 0, b = 1;
+	int count = 0, divisor = 1;
 
 	if (num < 0)
 	{
@@ -49,17 +49,17 @@ int print_int(va_list arg)
 		num = -num;
 	}
 
-	while (num / b > 9)
-		b *= 10;
+	while (num / divisor > 9)
+		divisor *= 10;
 
-	while (b != 0)
+	while (divisor != 0)
 	{
-		_putchar('0' + (num / b));
-		num %= b;
-		b /= 10;
-		a++;
+		_putchar('0' + (num / divisor));
+		num %= divisor;
+		divisor /= 10;
+		count++;
 	}
-	return (a);
+	return (count);
 }
 
 /**

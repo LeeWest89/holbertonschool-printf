@@ -36,5 +36,5 @@ conversion specifiers:
 %% - print a percent sign 
 
 Authors 
-Lee West @leewest89 /n
+Lee West @LeeWest89 /n
 George Rogers @grogers26
